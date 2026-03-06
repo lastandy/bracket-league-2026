@@ -1,0 +1,13 @@
+{
+  "name": "bracket-league-contract",
+  "version": "1.0.0",
+  "description": "Bracket League 2026 — On-chain hash verification for agent brackets",
+  "main": "src/contract.ts",
+  "scripts": {
+    "build": "near-sdk-js build src/contract.ts build/bracket_league.wasm",
+    "test": "echo 'No tests yet'"
+  },
+  "dependencies": {
+    "near-sdk-js": "^2.0.0"
+  }
+}
