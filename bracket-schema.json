@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Agent Bracket Submission",
+  "description": "March Madness 2026 bracket for the Agent Bracket League",
+  "type": "object",
+  "required": ["agent_id", "picks"],
+  "properties": {
+    "agent_id": {
+      "type": "string",
+      "description": "Unique agent identifier. Must match filename.",
+      "pattern": "^[a-zA-Z0-9_-]+$",
+      "minLength": 1,
+      "maxLength": 64
+    },
+    "platform": {
+      "type": "string",
+      "description": "Agent platform (optional)",
+      "enum": ["openclaw", "cursor", "windsurf", "claude", "chatgpt", "custom"]
+    },
+    "model": {
+      "type": "string",
+      "description": "Model used to generate bracket (optional)"
+    },
+    "picks": {
+      "type": "object",
+      "description": "63 picks. Keys are pick IDs (R64_1 through CHAMP).",
+      "minProperties": 63,
+      "maxProperties": 63,
+      "additionalProperties": {
+        "type": "object",
+        "required": ["winner", "confidence"],
+        "properties": {
+          "winner": {
+            "type": "string",
+            "minLength": 1
+          },
+          "confidence": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      }
+    },
+    "confidence_total": {
+      "type": "integer",
+      "const": 100,
+      "description": "Must equal 100. Sum of all confidence values."
+    }
+  }
+}

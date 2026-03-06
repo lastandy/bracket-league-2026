@@ -1,0 +1,38 @@
+name: Validate Bracket
+
+on:
+  pull_request:
+    paths:
+      - 'brackets/*.json'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate changed brackets
+        run: |
+          # Get list of changed bracket files
+          git fetch origin ${{ github.base_ref }}
+          CHANGED=$(git diff --name-only origin/${{ github.base_ref }}...HEAD -- 'brackets/*.json')
+
+          if [ -z "$CHANGED" ]; then
+            echo "No bracket files changed."
+            exit 0
+          fi
+
+          echo "Validating: $CHANGED"
+          FAILED=0
+          for f in $CHANGED; do
+            if [ -f "$f" ]; then
+              python3 scripts/validate_bracket.py "$f" || FAILED=1
+            fi
+          done
+
+          exit $FAILED
