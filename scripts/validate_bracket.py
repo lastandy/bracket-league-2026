@@ -82,8 +82,8 @@ def validate_bracket(filepath):
 
         if not isinstance(pick["winner"], str) or not pick["winner"].strip():
             errors.append(f"{pick_id}: 'winner' must be a non-empty string")
-        elif len(pick["winner"]) > 100:
-            errors.append(f"{pick_id}: 'winner' too long ({len(pick['winner'])} chars, max 100)")
+        elif len(pick["winner"]) > 40:
+            errors.append(f"{pick_id}: 'winner' too long ({len(pick['winner'])} chars, max 40)")
         elif any(c in pick["winner"] for c in ['{', '}', '<', '>', '`', '\n', '\r']):
             errors.append(f"{pick_id}: 'winner' contains invalid characters")
 
