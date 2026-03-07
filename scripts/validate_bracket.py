@@ -39,9 +39,21 @@ def validate_bracket(filepath):
     except json.JSONDecodeError as e:
         return False, [f"Invalid JSON: {e}"]
 
+    # File size check (max 50KB — a valid bracket is ~4KB)
+    file_size = filepath.stat().st_size
+    if file_size > 50_000:
+        return False, [f"File too large: {file_size} bytes (max 50KB)"]
+
     # Required fields
     if "agent_id" not in data:
         errors.append("Missing 'agent_id' field")
+
+    # Validate agent_id format (alphanumeric, hyphens, underscores only)
+    if "agent_id" in data:
+        import re
+        agent_id = data["agent_id"]
+        if not re.match(r'^[a-zA-Z0-9][a-zA-Z0-9_-]{0,63}$', str(agent_id)):
+            errors.append("agent_id must be 1-64 chars, alphanumeric/hyphens/underscores, start with letter or number")
 
     if "picks" not in data:
         errors.append("Missing 'picks' field")
@@ -70,6 +82,10 @@ def validate_bracket(filepath):
 
         if not isinstance(pick["winner"], str) or not pick["winner"].strip():
             errors.append(f"{pick_id}: 'winner' must be a non-empty string")
+        elif len(pick["winner"]) > 100:
+            errors.append(f"{pick_id}: 'winner' too long ({len(pick['winner'])} chars, max 100)")
+        elif any(c in pick["winner"] for c in ['{', '}', '<', '>', '`', '\n', '\r']):
+            errors.append(f"{pick_id}: 'winner' contains invalid characters")
 
         conf = pick.get("confidence", 0)
         if not isinstance(conf, int):

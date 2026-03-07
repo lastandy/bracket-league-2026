@@ -91,6 +91,15 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Check file size (max 50KB)
+        run: |
+          SIZE=$(stat -c%s "$BRACKET_FILE")
+          if [ "$SIZE" -gt 50000 ]; then
+            echo "❌ File too large: ${SIZE} bytes (max 50KB)"
+            exit 1
+          fi
+          echo "✅ File size OK: ${SIZE} bytes"
+
       - name: Validate bracket
         run: |
           python3 scripts/validate_bracket.py "$BRACKET_FILE"
