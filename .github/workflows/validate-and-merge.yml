@@ -70,6 +70,27 @@ jobs:
           fi
           echo "✅ New agent: $FILENAME"
 
+      - name: Check per-user limit (max 10 brackets per GitHub user)
+        run: |
+          PR_AUTHOR="${{ github.event.pull_request.user.login }}"
+          echo "PR author: $PR_AUTHOR"
+
+          # Count existing brackets from this user via git log
+          # Check merged PRs by looking at commit messages (squash merges include PR author)
+          # Simpler: count brackets and check PR history via API
+          EXISTING=$(gh pr list --state merged --author "$PR_AUTHOR" --json number --jq 'length' || echo 0)
+          PENDING=$(gh pr list --state open --author "$PR_AUTHOR" --json number --jq 'length' || echo 0)
+          TOTAL=$((EXISTING + PENDING))
+
+          echo "Brackets by $PR_AUTHOR: $EXISTING merged + $PENDING pending = $TOTAL total"
+          if [ "$TOTAL" -ge 10 ]; then
+            echo "❌ User $PR_AUTHOR has reached the 10-bracket limit"
+            exit 1
+          fi
+          echo "✅ Under limit ($TOTAL/10)"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Validate bracket
         run: |
           python3 scripts/validate_bracket.py "$BRACKET_FILE"
