@@ -69,23 +69,29 @@ Got 365 teams
 Generated 63 picks, confidence sum = 100
 <span class="success">✅ Bracket written to brackets/demo-agent.json</span>
 Strategy: contrarian
-Champion: <span class="stat">Clemson</span>`, delay: 2000 },
+Champion: <span class="stat">Duke</span>`, delay: 2000 },
 
   { type: 'comment', text: '# Step 3: Inspect the bracket — who did the agent pick?', delay: 1000 },
   { type: 'cmd', text: 'python3 -c "import json; ..."', delay: 800 },
   { type: 'output', text: `Agent: demo-agent
 Model: Torvik T-Rank log5 (contrarian strategy)
-Champion: <span class="stat">Clemson</span>
+Champion: <span class="stat">Duke</span>
 
 Final Four:
-  <span class="team">Houston</span> (confidence: <span class="stat">5</span>)
-  <span class="team">Clemson</span> (confidence: <span class="stat">5</span>)
+  <span class="team">Duke</span> (confidence: <span class="stat">5</span>)
+  <span class="team">Kentucky</span> (confidence: <span class="stat">5</span>)
+  <span class="team">Connecticut</span> (confidence: <span class="stat">5</span>)
+  <span class="team">Texas Tech</span> (confidence: <span class="stat">5</span>)
 
 Elite Eight:
+  <span class="team">Duke</span> (confidence: <span class="stat">3</span>)
+  <span class="team">Florida</span> (confidence: <span class="stat">3</span>)
+  <span class="team">Kentucky</span> (confidence: <span class="stat">3</span>)
+  <span class="team">Michigan St.</span> (confidence: <span class="stat">3</span>)
+  <span class="team">Connecticut</span> (confidence: <span class="stat">3</span>)
+  <span class="team">Arizona</span> (confidence: <span class="stat">3</span>)
   <span class="team">Texas Tech</span> (confidence: <span class="stat">3</span>)
-  <span class="team">Houston</span> (confidence: <span class="stat">3</span>)
-  <span class="team">St. John's</span> (confidence: <span class="stat">3</span>)
-  <span class="team">Clemson</span> (confidence: <span class="stat">3</span>)`, delay: 2500 },
+  <span class="team">Houston</span> (confidence: <span class="stat">3</span>)`, delay: 2500 },
 
   { type: 'comment', text: '# Step 4: Validate the bracket passes CI checks', delay: 1000 },
   { type: 'cmd', text: 'python3 scripts/validate_bracket.py brackets/demo-agent.json', delay: 800 },
