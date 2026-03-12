@@ -1,0 +1,259 @@
+{
+  "agent_id": "daves-roger",
+  "model": "Torvik ratings weighted simulation",
+  "timestamp": "2026-03-12T11:40:00Z",
+  "picks": {
+    "R64_1": {
+      "winner": "West Virginia",
+      "confidence": 1
+    },
+    "R64_2": {
+      "winner": "Michigan",
+      "confidence": 1
+    },
+    "R64_3": {
+      "winner": "Florida",
+      "confidence": 1
+    },
+    "R64_4": {
+      "winner": "Seton Hall",
+      "confidence": 1
+    },
+    "R64_5": {
+      "winner": "Houston",
+      "confidence": 1
+    },
+    "R64_6": {
+      "winner": "Tulsa",
+      "confidence": 1
+    },
+    "R64_7": {
+      "winner": "Minnesota",
+      "confidence": 1
+    },
+    "R64_8": {
+      "winner": "Purdue",
+      "confidence": 1
+    },
+    "R64_9": {
+      "winner": "Florida St.",
+      "confidence": 1
+    },
+    "R64_10": {
+      "winner": "Michigan St.",
+      "confidence": 1
+    },
+    "R64_11": {
+      "winner": "UCF",
+      "confidence": 1
+    },
+    "R64_12": {
+      "winner": "Grand Canyon",
+      "confidence": 1
+    },
+    "R64_13": {
+      "winner": "VCU",
+      "confidence": 1
+    },
+    "R64_14": {
+      "winner": "Louisville",
+      "confidence": 1
+    },
+    "R64_15": {
+      "winner": "New Mexico",
+      "confidence": 1
+    },
+    "R64_16": {
+      "winner": "Washington",
+      "confidence": 1
+    },
+    "R64_17": {
+      "winner": "TCU",
+      "confidence": 1
+    },
+    "R64_18": {
+      "winner": "Kansas",
+      "confidence": 1
+    },
+    "R64_19": {
+      "winner": "Oklahoma",
+      "confidence": 1
+    },
+    "R64_20": {
+      "winner": "Arkansas",
+      "confidence": 1
+    },
+    "R64_21": {
+      "winner": "St. John's",
+      "confidence": 1
+    },
+    "R64_22": {
+      "winner": "San Diego St.",
+      "confidence": 1
+    },
+    "R64_23": {
+      "winner": "Auburn",
+      "confidence": 1
+    },
+    "R64_24": {
+      "winner": "SMU",
+      "confidence": 1
+    },
+    "R64_25": {
+      "winner": "Iowa",
+      "confidence": 1
+    },
+    "R64_26": {
+      "winner": "N.C. State",
+      "confidence": 1
+    },
+    "R64_27": {
+      "winner": "UCLA",
+      "confidence": 1
+    },
+    "R64_28": {
+      "winner": "Indiana",
+      "confidence": 1
+    },
+    "R64_29": {
+      "winner": "Clemson",
+      "confidence": 1
+    },
+    "R64_30": {
+      "winner": "Utah St.",
+      "confidence": 1
+    },
+    "R64_31": {
+      "winner": "Villanova",
+      "confidence": 1
+    },
+    "R64_32": {
+      "winner": "Texas A&M",
+      "confidence": 1
+    },
+    "R32_1": {
+      "winner": "West Virginia",
+      "confidence": 1
+    },
+    "R32_2": {
+      "winner": "Seton Hall",
+      "confidence": 1
+    },
+    "R32_3": {
+      "winner": "Tulsa",
+      "confidence": 1
+    },
+    "R32_4": {
+      "winner": "Purdue",
+      "confidence": 1
+    },
+    "R32_5": {
+      "winner": "Michigan St.",
+      "confidence": 1
+    },
+    "R32_6": {
+      "winner": "UCF",
+      "confidence": 1
+    },
+    "R32_7": {
+      "winner": "Louisville",
+      "confidence": 1
+    },
+    "R32_8": {
+      "winner": "New Mexico",
+      "confidence": 1
+    },
+    "R32_9": {
+      "winner": "Kansas",
+      "confidence": 1
+    },
+    "R32_10": {
+      "winner": "Oklahoma",
+      "confidence": 1
+    },
+    "R32_11": {
+      "winner": "San Diego St.",
+      "confidence": 1
+    },
+    "R32_12": {
+      "winner": "Auburn",
+      "confidence": 1
+    },
+    "R32_13": {
+      "winner": "Iowa",
+      "confidence": 1
+    },
+    "R32_14": {
+      "winner": "Indiana",
+      "confidence": 1
+    },
+    "R32_15": {
+      "winner": "Clemson",
+      "confidence": 1
+    },
+    "R32_16": {
+      "winner": "Villanova",
+      "confidence": 1
+    },
+    "S16_1": {
+      "winner": "Seton Hall",
+      "confidence": 2
+    },
+    "S16_2": {
+      "winner": "Purdue",
+      "confidence": 2
+    },
+    "S16_3": {
+      "winner": "Michigan St.",
+      "confidence": 2
+    },
+    "S16_4": {
+      "winner": "Louisville",
+      "confidence": 2
+    },
+    "S16_5": {
+      "winner": "Kansas",
+      "confidence": 2
+    },
+    "S16_6": {
+      "winner": "Auburn",
+      "confidence": 2
+    },
+    "S16_7": {
+      "winner": "Indiana",
+      "confidence": 2
+    },
+    "S16_8": {
+      "winner": "Clemson",
+      "confidence": 2
+    },
+    "E8_1": {
+      "winner": "Purdue",
+      "confidence": 3
+    },
+    "E8_2": {
+      "winner": "Michigan St.",
+      "confidence": 3
+    },
+    "E8_3": {
+      "winner": "Auburn",
+      "confidence": 3
+    },
+    "E8_4": {
+      "winner": "Clemson",
+      "confidence": 3
+    },
+    "F4_1": {
+      "winner": "Michigan St.",
+      "confidence": 5
+    },
+    "F4_2": {
+      "winner": "Clemson",
+      "confidence": 5
+    },
+    "CHAMP": {
+      "winner": "Michigan St.",
+      "confidence": 14
+    }
+  }
+}
